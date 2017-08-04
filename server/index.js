@@ -1,12 +1,7 @@
-const Sequelize = require('sequelize')
-
-const db = new Sequelize('postgres://localhost:5432/rollup', {
-  logging: false,
-})
+const db = require('./db')
 
 require('./models')
 
-db.sync()
-.then(() => require('../index.js'))
-
-module.exports = db
+db.sync({ force: true })
+.then(() => require('../index'))
+.catch(console.error)
