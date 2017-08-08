@@ -1,3 +1,4 @@
+require('escape-hatch')()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
@@ -15,6 +16,7 @@ app
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error')
 })
+
 
 .get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public'))
