@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
+module.exports =
 // router.use('/path', require('./fileName))
 router
 
@@ -9,10 +10,10 @@ router
   next(err)
 })
 
-module.exports = router;
+.use('/gmail', require('./gmail'))
+.use('/auth', require('./auth'));
 
 // Then on each individual page:
-// const router = require('express').Router();
 
 // // matches GET requests
 // router.get('/', function (req, res, next) { /* etc */});
@@ -22,5 +23,3 @@ module.exports = router;
 // router.put('/:puppyId', function (req, res, next) { /* etc */});
 // // matches DELTE requests
 // router.delete('/:puppyId', function (req, res, next) { /* etc */});
-
-// module.exports = router;
