@@ -44,6 +44,6 @@ app
 
 .listen(3000, () => {
   console.log('Listening on http://localhost:3000')
-  db.sync()
+  db.sync({ force: true })
   .then(() => console.log('Postgres server is connected'))
 })

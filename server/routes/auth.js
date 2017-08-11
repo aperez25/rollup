@@ -11,10 +11,10 @@ const strategy = new GoogleStrategy({
 }, (token, refreshToken, profile, done) => {
   const name = profile.displayName;
   const email = profile.emails[0].value;
-
+  console.log(token)
   User.findOrCreate({
     where: { googleId: profile.id },
-    defaults: { email, name },
+    defaults: { email, name }, // TODO: store authToken to cookies or user session
   })
   .spread(user => done(null, user))
   .catch(done);

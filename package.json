@@ -12,10 +12,12 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "crypto": "0.0.3",
+    "escape-hatch": "^1.0.4",
     "express": "^4.15.3",
     "google-auth-library": "^0.10.0",
     "googleapis": "^20.1.0",
     "morgan": "^1.8.2",
+    "node-gmail-api": "^0.6.0",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "path": "^0.12.7",
@@ -30,7 +32,6 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.4.2",
-    "escape-hatch": "^1.0.4",
     "webpack": "^3.5.1"
   },
   "devDependencies": {
