@@ -2,4 +2,8 @@ node_modules
 public/bundle.js
 public/bundle.js.map
 client_secret.json
+<<<<<<< HEAD
 ../.env
+=======
+./.env
+>>>>>>> 5109ccae6502f27b749fd0583ea43197b183cfca
