@@ -1,6 +1,5 @@
+.env
 node_modules
 public/bundle.js
 public/bundle.js.map
 client_secret.json
-.env
-
