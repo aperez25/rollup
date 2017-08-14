@@ -9,13 +9,15 @@ element {
 
 /* MAIN  */
 h1 {
-  font-family: 'Lobster';
-  color: #F3F3F7;
-  background: #ABD4E0;
+  font-family: 'Pacifico';
+  font-size: 2em;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
-h2, p, small {
-  font-family: 'Railway', sans-serif;
+div {
+  font-family: 'Raleway', sans-serif;
 }
 
 .app {
@@ -31,9 +33,9 @@ a {
 
 button {
   display: inline-block;
-  color: white;
+  color: black;
   border-radius: 30px;
-  background: #D29A9B;
+  background: #F3F3F7;
   padding: 12px 20px;
   text-transform: uppercase;
   border: none;
@@ -42,12 +44,21 @@ button:hover {
   background: #8DBCD2;
 }
 
+/* HEADER */
+header {
+  text-align: center
+}
+
+.header-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
 
 /* NAVBAR  */
 nav {
-  background: #F3F3F7;
   color: #74BCD2;
-  padding: 10px;
+  padding: 5px;
 }
 
 
@@ -56,7 +67,6 @@ aside {
   width: 20%;
   float: left;
   margin: 0 1.5%;
-  background: #D29A9B;
   display: inline;
 }
 
@@ -81,7 +91,6 @@ aside {
 /* FOOTER  */
 
 footer {
-  background: #ABD4E0;
   color: #F3F3F7;
   clear: both;
   text-align: center;

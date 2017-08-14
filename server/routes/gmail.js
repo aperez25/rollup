@@ -23,7 +23,7 @@ module.exports = router;
 - at that point, user can view emails on grid
 
 ~~~~~ EMAIL GRID FEATURES ~~~~
-- "delete" email from view
+- hide email from view
 - go to gmail
 - expand view
 - drag & drop ? (what for?  ....)
@@ -35,5 +35,6 @@ module.exports = router;
 ~~~~~ ADDITIONAL FEATURES: ~~~~~
 - set up multiple rollup emails
 - email analytics
+- filters on the lefthand side
 */
 
