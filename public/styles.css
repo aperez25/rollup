@@ -31,15 +31,15 @@ a {
 
 button {
   display: inline-block;
-  color: #74BCD2;
+  color: white;
   border-radius: 30px;
   background: #D29A9B;
-  padding: 12px 30px;
+  padding: 12px 20px;
   text-transform: uppercase;
   border: none;
 }
 button:hover {
-  color: #999999;
+  background: #8DBCD2;
 }
 
 
@@ -53,7 +53,7 @@ nav {
 
 /* SIDEBAR  */
 aside {
-  width: 25%;
+  width: 20%;
   float: left;
   margin: 0 1.5%;
   background: #D29A9B;
@@ -81,7 +81,7 @@ aside {
 /* FOOTER  */
 
 footer {
-  background: black;
+  background: #ABD4E0;
   color: #F3F3F7;
   clear: both;
   text-align: center;

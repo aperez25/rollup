@@ -8,9 +8,11 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 const db = require('./server/db')
 const User = require('./server/models/user')
+const session = require('express-session')
 
 passport.serializeUser((user, done) => {
   console.log(user);
+  // can add token here:
   done(null, user.id);
 });
 
@@ -23,6 +25,11 @@ passport.deserializeUser((id, done) => {
 app
 .use(morgan('dev'))
 .use(express.static(path.join(__dirname, './public')))
+.use(session({
+  secret: 'Luna is a big fat tuna',
+  saveUninitialized: false,
+  resave: false,
+}))
 .use(bodyParser.json())
 .use(bodyParser.urlencoded({ extended: true }))
 .use(passport.initialize())
@@ -44,6 +51,6 @@ app
 
 .listen(3000, () => {
   console.log('Listening on http://localhost:3000')
-  db.sync({ force: true })
+  db.sync()
   .then(() => console.log('Postgres server is connected'))
 })
