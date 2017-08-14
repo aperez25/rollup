@@ -1,0 +1,101 @@
+element {
+  --main-bg-color: #F3F3F7;
+  --main-body-color: #D29A9B;
+  --color-1: #ABD4E0;
+  --color-2: #8DBCD2;
+  --color-3: #74BCD2;
+  --gray: #999999;
+}
+
+/* MAIN  */
+h1 {
+  font-family: 'Pacifico';
+  font-size: 2em;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+div {
+  font-family: 'Raleway', sans-serif;
+}
+
+.app {
+  background: #F3F3F7;
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+a {
+  color:  #74BCD2;
+}
+
+button {
+  display: inline-block;
+  color: black;
+  border-radius: 30px;
+  background: #F3F3F7;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  border: none;
+}
+button:hover {
+  background: #8DBCD2;
+}
+
+/* HEADER */
+header {
+  text-align: center
+}
+
+.header-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+/* NAVBAR  */
+nav {
+  color: #74BCD2;
+  padding: 5px;
+}
+
+
+/* SIDEBAR  */
+aside {
+  width: 20%;
+  float: left;
+  margin: 0 1.5%;
+  display: inline;
+}
+
+/* EMAILS  */
+.body {
+  float: left;
+  width: 65%;
+  margin: 0 1.5% 1.5% 1.5%;
+  display: inline;
+  border: 100px auto black;
+}
+
+.column {
+  width: 20%;
+  float: left;
+  margin: 0 1.5% 1.5% 1.5%;
+  box-sizing: border-box;
+  padding: 12px 30px 15px 15px;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER  */
+
+footer {
+  color: #F3F3F7;
+  clear: both;
+  text-align: center;
+}
+
+small {
+  display: block;
+}

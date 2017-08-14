@@ -11,7 +11,7 @@ const strategy = new GoogleStrategy({
 }, (token, refreshToken, profile, done) => {
   const name = profile.displayName;
   const email = profile.emails[0].value;
-  console.log(token)
+  console.log(email)
   User.findOrCreate({
     where: { googleId: profile.id },
     defaults: { email, name }, // TODO: store authToken to cookies or user session
