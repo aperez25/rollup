@@ -13193,37 +13193,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(106);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function () {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'button',
-      null,
-      _react2.default.createElement(
-        'a',
-        { href: '/auth' },
-        'Gmail Sign-up / login'
-      )
-    )
-  );
-};
-
-/***/ }),
+/* 116 */,
 /* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13254,10 +13224,6 @@ var _Main = __webpack_require__(294);
 
 var _Main2 = _interopRequireDefault(_Main);
 
-var _Login = __webpack_require__(116);
-
-var _Login2 = _interopRequireDefault(_Login);
-
 var _setupPage = __webpack_require__(300);
 
 var _setupPage2 = _interopRequireDefault(_setupPage);
@@ -13279,7 +13245,6 @@ _reactDom2.default.render(_react2.default.createElement(
       _react2.default.createElement(
         _reactRouterDom.Switch,
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _Login2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/page', component: _setupPage2.default })
       )
     )
@@ -29710,10 +29675,6 @@ var _EmailsView = __webpack_require__(299);
 
 var _EmailsView2 = _interopRequireDefault(_EmailsView);
 
-var _Login = __webpack_require__(116);
-
-var _Login2 = _interopRequireDefault(_Login);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = function () {
@@ -29721,7 +29682,6 @@ module.exports = function () {
     'div',
     null,
     _react2.default.createElement(_Header2.default, null),
-    _react2.default.createElement(_Login2.default, null),
     _react2.default.createElement(
       'div',
       null,
@@ -29769,39 +29729,56 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _reactRouterDom = __webpack_require__(106);
 
-// import { Link } from 'react-router';
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = function () {
   return _react2.default.createElement(
-    "div",
+    'div',
     null,
     _react2.default.createElement(
-      "nav",
+      'nav',
       null,
       _react2.default.createElement(
-        "h1",
+        'h1',
         null,
-        " ",
-        _react2.default.createElement("img", { src: "./images/toilet-paper-roll-outline.png", alt: "",
-          className: "header-icon" }),
-        " Rollup"
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/' },
+          ' ',
+          _react2.default.createElement('img', { src: './images/toilet-paper-roll-outline.png', alt: '',
+            className: 'header-icon' }),
+          ' Rollup '
+        )
       ),
       _react2.default.createElement(
-        "button",
-        null,
-        "Home"
+        'button',
+        { className: 'nav' },
+        'Home'
       ),
       _react2.default.createElement(
-        "button",
-        null,
-        "Settings"
+        'button',
+        { className: 'nav' },
+        'Settings'
       ),
       _react2.default.createElement(
-        "button",
-        null,
-        "Gmail"
+        'button',
+        { className: 'nav' },
+        _react2.default.createElement(
+          'a',
+          { href: '/login' },
+          ' Sign-up/Login'
+        )
+      ),
+      _react2.default.createElement(
+        'button',
+        { className: 'nav' },
+        _react2.default.createElement(
+          'a',
+          { href: '/mail' },
+          'Gmail Setup'
+        )
       )
     )
   );

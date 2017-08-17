@@ -24,11 +24,12 @@ div {
   background: #EFEDE7;
 }
 
-a:hover {
-  color: #a9b2b9;
-}
 a {
-  color:  #658DA4;
+  color:  #436B93;
+  text-decoration: none;
+}
+a:hover {
+  color: #3FA4A3;
 }
 
 button {
@@ -73,7 +74,7 @@ aside {
 /* EMAILS  */
 .body {
   float: left;
-  width: 65%;
+  width: 70%;
   margin: 0 1.5% 1.5% 1.5%;
   display: inline;
   border: 100px auto black;
