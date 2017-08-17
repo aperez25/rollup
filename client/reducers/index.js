@@ -1,5 +1,4 @@
-function dummyReducer (state = {}, action) {
-  return state;
-}
+import { combineReducers } from 'redux';
+import users from './users';
 
-export default dummyReducer;
+export default combineReducers({ users });

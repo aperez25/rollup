@@ -8,6 +8,5 @@ module.exports = () => (
       <p>links</p>
       <p>links</p>
     </aside>
-
   </div>
 )

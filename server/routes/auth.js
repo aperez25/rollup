@@ -1,4 +1,3 @@
-require('escape-hatch')()
 const router = require('express').Router();
 const User = require('../models/user');
 const passport = require('passport');
@@ -8,16 +7,21 @@ const strategy = new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   callbackURL: process.env.REDIRECT_URL,
-}, (token, refreshToken, profile, done) => {
+}, (authToken, refreshToken, profile, done) => {
   const name = profile.displayName;
   const email = profile.emails[0].value;
-  console.log(email)
   User.findOrCreate({
     where: { googleId: profile.id },
-    defaults: { email, name }, // TODO: store authToken to cookies or user session
+    defaults: { name, email },
   })
-  .spread(user => done(null, user))
-  .catch(done);
+  .spread((user) => {
+    user.token = authToken
+    done(null, user)
+  })
+  .catch((err) => {
+    console.error(err)
+    done(err)
+  });
 });
 
 passport.use(strategy);
@@ -27,5 +31,6 @@ module.exports = router
 .get('/callback',
   passport.authenticate('google', {
     successRedirect: '/',
-    failureRedirect: '/login',
-  }));
+    failureRedirect: '/auth',
+  }),
+);

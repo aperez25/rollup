@@ -10,8 +10,8 @@
   "author": "Alice Perez",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
-    "crypto": "0.0.3",
     "escape-hatch": "^1.0.4",
     "express": "^4.15.3",
     "express-session": "^1.15.5",
@@ -23,7 +23,7 @@
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "path": "^0.12.7",
-    "pg": "^7.1.0",
+    "pg": "6.4.1",
     "pg-hstore": "^2.3.2",
     "pg-native": "^2.0.1",
     "react": "^15.6.1",
