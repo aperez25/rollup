@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory'
 import store from './store';
 import Main from './components/Main.jsx';
-import Page from './components/setupPage.jsx';
+import Page from './components/SetupPage.jsx';
+import Emails from './components/EmailsView.jsx'
 
 const customHistory = createBrowserHistory()
 
@@ -14,9 +15,6 @@ ReactDOM.render(
     <Router history={customHistory} >
       <div>
         <Route path="/" component={Main} />
-        <Switch>
-          <Route path="/page" component={Page} />
-        </Switch>
       </div>
     </Router>
   </Provider>,

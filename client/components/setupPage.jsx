@@ -1,6 +1,11 @@
 import React from 'react'
 
 module.exports = (
-  <div> currently an empty div
+  <div>
+    <ul>
+      <input type="checkbox" />Test
+      <input type="checkbox" />Test
+      <input type="checkbox" />Test
+    </ul>
   </div>
 )

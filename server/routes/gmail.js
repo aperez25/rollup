@@ -1,20 +1,30 @@
 const router = require('express').Router();
 const User = require('../models/user');
 const Email = require('../models/email');
-const google = require('googleapis');
-const gmail = google.gmail('v1')
-// const Gmail = require('node-gmail-api')
-require('escape-hatch')()
+// const google = require('googleapis');
+// const gmail = google.gmail('v1')
+const Gmail = require('node-gmail-api')
 
 router
 .get('/', (req, res, next) => {
   const token = req.session.passport.user.token
-  const userId = req.user.googleId
+  const gmail = new Gmail(token);
+  const stream = gmail.messages('newer_than:2m', { max: 5 });
+  var data = [];
 
-  gmail.users.messages.list({ access_token: token, userId: 'me' }, (err, response) => {
-    res.send(response)
-    if (err) return next(err);
+  stream.on('data', (message) => {
+    const from = message.payload.headers.filter(field => {
+      if (field.name === "From" || field.name === "Subject")return field;
+    })
+    data.push('EMAIL:', from, message.snippet);
   })
+
+  stream.on('end', () => res.send(data))
+
+  // gmail.users.messages.list({ access_token: token, userId: 'me' }, (err, response) => {
+  //   res.send(response)
+  //   if (err) return next(err);
+  // })
 })
 
 module.exports = router;
