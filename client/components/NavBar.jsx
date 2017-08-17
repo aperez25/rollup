@@ -6,10 +6,10 @@ module.exports = () => (
     <nav>
       <h1><Link to="/"> <img src="./images/toilet-paper-roll-outline.png" alt=""
         className="header-icon" /> Rollup </Link></h1>
-      <button className="nav">Home</button>
+      <Link to="/emails"><button className="nav">Home</button></Link>
       <button className="nav">Settings</button>
-      <button className="nav"><a href="/login"> Sign-up/Login</a></button>
-      <button className="nav"><a href="/mail">Gmail Setup</a></button>
+      <a href="/auth"> <button className="nav">Sign-up/Login</button></a>
+      <Link to="/setup"><button className="nav">Gmail Setup</button></Link>
     </nav>
   </div>
 )

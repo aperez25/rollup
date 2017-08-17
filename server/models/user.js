@@ -12,9 +12,4 @@ module.exports = db.define('user', {
   googleId: {
     type: Sequelize.STRING,
   },
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
 });
