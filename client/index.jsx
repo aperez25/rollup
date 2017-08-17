@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router';
-import createHistory from 'history/createBrowserHistory'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory'
 import store from './store';
-import Main from './components/Main.jsx'
-const customHistory = createHistory()
+import Main from './components/Main.jsx';
+import Login from './components/Login.jsx';
+import Page from './components/setupPage.jsx';
+
+const customHistory = createBrowserHistory()
 
 ReactDOM.render(
   <Provider store={store} >
     <Router history={customHistory} >
-      <Route path="/" component={Main}>
-      </Route>
+      <div>
+        <Route path="/" component={Main} />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/page" component={Page} />
+        </Switch>
+      </div>
     </Router>
   </Provider>,
   document.getElementById('app'),

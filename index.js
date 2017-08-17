@@ -11,37 +11,33 @@ const User = require('./server/models/user')
 const session = require('express-session')
 
 passport.serializeUser((user, done) => {
-  console.log(user);
-  // can add token here:
-  done(null, user.id);
+  done(null, { id: user.id, token: user.token });
 });
 
-passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
-    done(err, user);
-  });
+passport.deserializeUser((userSession, done) => {
+  User.findById(userSession.id)
+  .then((user) => {
+    done(null, user)
+  })
+  .catch(done)
 });
 
 app
 .use(morgan('dev'))
 .use(express.static(path.join(__dirname, './public')))
+.use(bodyParser.json())
+.use(bodyParser.urlencoded({ extended: true }))
 .use(session({
   secret: 'Luna is a big fat tuna',
   saveUninitialized: false,
   resave: false,
 }))
-.use(bodyParser.json())
-.use(bodyParser.urlencoded({ extended: true }))
 .use(passport.initialize())
 .use(passport.session())
-.use('/auth', require('./server/routes/auth'))
-.use('/mail', require('./server/routes/gmail'))
+.use('/', require('./server/routes/'))
 .use((err, req, res, next) => {
   console.error(err)
   console.error(err.stack)
-  if (res.headersSent) {
-    return next(err)
-  }
   res.status(err.status || 500).send(err.message || 'Internal server error')
 })
 
@@ -51,6 +47,6 @@ app
 
 .listen(3000, () => {
   console.log('Listening on http://localhost:3000')
-  db.sync()
+  db.sync({ force: true })
   .then(() => console.log('Postgres server is connected'))
 })

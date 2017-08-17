@@ -1,16 +1,16 @@
 element {
-  --main-bg-color: #F3F3F7;
-  --main-body-color: #D29A9B;
-  --color-1: #ABD4E0;
+  --main-bg-color: #EFEDE7;
+  --main-body-color: #3FA4A3;
+  --color-1: #436B93;
   --color-2: #8DBCD2;
-  --color-3: #74BCD2;
-  --gray: #999999;
+  --color-3: #658DA4;
+  --color-4: #658DA4;
 }
 
 /* MAIN  */
 h1 {
   font-family: 'Pacifico';
-  font-size: 2em;
+  font-size: 1.5em;
   display: inline;
   margin-left: 10px;
   margin-right: 20px;
@@ -21,21 +21,21 @@ div {
 }
 
 .app {
-  background: #F3F3F7;
+  background: #EFEDE7;
 }
 
 a:hover {
   color: #a9b2b9;
 }
 a {
-  color:  #74BCD2;
+  color:  #658DA4;
 }
 
 button {
   display: inline-block;
   color: black;
   border-radius: 30px;
-  background: #F3F3F7;
+  background: #EFEDE7;
   padding: 12px 20px;
   text-transform: uppercase;
   border: none;
@@ -91,7 +91,7 @@ aside {
 /* FOOTER  */
 
 footer {
-  color: #F3F3F7;
+  color: #3FA4A3;
   clear: both;
   text-align: center;
 }

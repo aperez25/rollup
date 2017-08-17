@@ -20,11 +20,4 @@ module.exports = db.define('email', {
   labels: {
     type: Sequelize.ARRAY(Sequelize.STRING),
   },
-}, {
-  instanceMethods: {
-  },
-  classMethods: {
-  },
-  hooks: {
-  },
 })

@@ -7,10 +7,14 @@ module.exports = db.define('user', {
   },
   email: {
     type: Sequelize.STRING,
-    unique: true,
     allowNull: true,
   },
   googleId: {
     type: Sequelize.STRING,
+  },
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
   },
 });

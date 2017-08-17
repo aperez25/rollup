@@ -3,13 +3,18 @@ const User = require('../models/user');
 const Email = require('../models/email');
 const Gmail = require('node-gmail-api')
 require('escape-hatch')()
-// TODO: will need to send passport token to route via user session & connect to this route
-// const gmail = new Gmail('ya29.GlukBFBYqBDPhzihfSzK9AaT5T1lSC6QTBkz0mepp9MljHRoYKI1tImIQufIXVSKBbkZg5Z0wTzXKuswvfwkRnZYtFl8JQgJat2VZDKa4bq3wdyhxLklKSRBnzxM')
-// const messages = gmail.messages('label:inbox', { max: 10 })
 
-// messages.on('data', (data) => {
-//   console.log(data.snippet)
-// })
+router
+.get('/', (req, res, next) => {
+  const token = req.session.passport.user.token
+  const gmail = new Gmail(token)
+  const messages = gmail.messages('label:inbox', { max: 10 })
+
+  messages.on('data', (data) => {
+    res.send(data.snippet)
+  })
+
+})
 
 module.exports = router;
 
