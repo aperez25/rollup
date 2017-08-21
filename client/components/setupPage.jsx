@@ -1,6 +1,6 @@
 import React from 'react'
 
-module.exports = (
+module.exports = () => (
   <div>
     <ul>
       <input type="checkbox" />Test
